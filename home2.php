@@ -8,6 +8,8 @@ $mpdf = new \Mpdf\Mpdf([    'mode' => 'utf-8',
 
 $css = file_get_contents('home2.css');
 $mpdf->WriteHTML($css,1);
+$mpdf->setAutoTopMargin = 'stretch';
+  $mpdf->setAutoBottomMargin = 'stretch';
 $mpdf->SetHTMLHeader('
 <table width="100%" class="theader">
     <tr>
@@ -34,13 +36,13 @@ $mpdf->SetHTMLFooter('
 	width:100%;"></div>
 ');
 
-$mpdf->WriteHTML('<br/><br/><br/><br/><br/><br/><br/><br/><div class="back"><h3>&nbsp;&nbsp;&nbsp;REPORT PERIOD - FROM: 01/10/2020, TO: 30/10/2020</h3></div>
+$mpdf->WriteHTML('<div class="back"><h3>&nbsp;&nbsp;&nbsp;REPORT PERIOD - FROM: 01/10/2020, TO: 30/10/2020</h3></div>
   <br/>', \Mpdf\HTMLParserMode::HTML_BODY, true, false);
   
   $mpdf->WriteHTML('
  <div class="pro"> <h3>&nbsp;&nbsp;&nbsp;PROJECT DETAILS</h3></div>		 
     <table class= "tablepro">
- <tr style=" width:30%;height:30%">
+ <tr style="width:30%;height:30%">
  <td class="trproL"><b>Class name</b></td>
   <td class="trproR">Group 1 class</td>
  </tr>
@@ -121,27 +123,6 @@ $mpdf->WriteHTML('<br/><br/><br/><br/><br/><br/><br/><br/><div class="back"><h3>
 </body>
 </html>', \Mpdf\HTMLParserMode::HTML_BODY, false, false);
 
-$mpdf->SetHTMLHeader('
-<table width="100%" class="theader">
-    <tr>
-        <td><img src="img\rlms.png" class="row"></td>
-        <td><img src="img\rlmsL.png" height="28"></td>
-        <td width="33%" class="twidth"><img class="img" src="img\rlmsL.png" height="28"><span><b>LEARNER ATTENDENCE REPORT</b></span>
-</td>
-    </tr>
-</table>
-</div>
-  <table width="100%">
-    <tr>
-      <td><img src="img\nsf.png" class="nsf1"></td>
-       <td width="20%" align="center"><img src="img\rlmsL.png"></td>
-	<td><img src="img\rlmsL.png" height="28"></td>
-<td width="8%"><img src="img\mtl1.PNG"  class="mtl">
-</td>
-    </tr>
-	<br/>
-</table>');
-
 $mpdf->WriteHTML('<br/>
 	<div class="as"> 
         <b>&nbsp;&nbsp;Expected attendance : 154 >> Actual : 93 >> days absent : 61</b></div>
@@ -150,12 +131,11 @@ $mpdf->WriteHTML('<br/>
 $mpdf->WriteHTML('<div class="pn"><b>NSF | Learner Attendance Report | 2020-11-06 @ 08:26:23 | page: 1 of 1</b></div>');
 
 
-$mpdf->WriteHTML('<br/><br/><br/><br/><br/><div class="back"></div>
-  <br/>', \Mpdf\HTMLParserMode::HTML_BODY, true, false);
+
 
 
   $mpdf->WriteHTML('
-<br/><br/><br/><br/><br/><br/><div class="back"><h3>&nbsp;&nbsp;&nbsp;REPORT PERIOD - FROM: 01/10/2020, TO: 30/10/2020</h3></div>
+<br/><br/><br/><br/><br/><br/><div class="back"><h3>&nbsp;&nbsp;&nbsp;PROJECT DETAILS TABLE</h3></div>
   <br/>
 	<table width="100%" class="tt">
  <tr class="trt">
@@ -323,7 +303,92 @@ $mpdf->WriteHTML('<br/><br/><br/><br/><br/><div class="back"></div>
   
  </tr>
   
+  </tr>
   
+  <tr>
+   <td class="td1">7</td>
+   <td class="td2">Penny Khumalo </td>
+    <td class="td2">9403050336087</td>
+    <td class="td2">Female</td>
+    <td class="td2">26</td>
+    <td class="td2">22</td>
+    <td class="td2">0</td>
+    <td class="td2">0</td>
+    <td class="td2">181:34:52</td>
+    <td class="td2">NSF</td>
+    <td class="td2">NSFUIF1</td>
+    <td class="td2">MTL Training and Projects</td>
+    <td class="td1">1</td>
+  
+ </tr></tr>
+  
+  <tr>
+   <td class="td1">7</td>
+   <td class="td2">Penny Khumalo </td>
+    <td class="td2">9403050336087</td>
+    <td class="td2">Female</td>
+    <td class="td2">26</td>
+    <td class="td2">22</td>
+    <td class="td2">0</td>
+    <td class="td2">0</td>
+    <td class="td2">181:34:52</td>
+    <td class="td2">NSF</td>
+    <td class="td2">NSFUIF1</td>
+    <td class="td2">MTL Training and Projects</td>
+    <td class="td1">1</td>
+  
+ </tr></tr>
+  
+  <tr>
+   <td class="td1">7</td>
+   <td class="td2">Penny Khumalo </td>
+    <td class="td2">9403050336087</td>
+    <td class="td2">Female</td>
+    <td class="td2">26</td>
+    <td class="td2">22</td>
+    <td class="td2">0</td>
+    <td class="td2">0</td>
+    <td class="td2">181:34:52</td>
+    <td class="td2">NSF</td>
+    <td class="td2">NSFUIF1</td>
+    <td class="td2">MTL Training and Projects</td>
+    <td class="td1">1</td>
+  
+ </tr></tr>
+  
+  <tr>
+   <td class="td1">7</td>
+   <td class="td2">Penny Khumalo </td>
+    <td class="td2">9403050336087</td>
+    <td class="td2">Female</td>
+    <td class="td2">26</td>
+    <td class="td2">22</td>
+    <td class="td2">0</td>
+    <td class="td2">0</td>
+    <td class="td2">181:34:52</td>
+    <td class="td2">NSF</td>
+    <td class="td2">NSFUIF1</td>
+    <td class="td2">MTL Training and Projects</td>
+    <td class="td1">1</td>
+  
+ </tr></tr>
+  
+  <tr>
+   <td class="td1">7</td>
+   <td class="td2">Penny Khumalo </td>
+    <td class="td2">9403050336087</td>
+    <td class="td2">Female</td>
+    <td class="td2">26</td>
+    <td class="td2">22</td>
+    <td class="td2">0</td>
+    <td class="td2">0</td>
+    <td class="td2">181:34:52</td>
+    <td class="td2">NSF</td>
+    <td class="td2">NSFUIF1</td>
+    <td class="td2">MTL Training and Projects</td>
+    <td class="td1">1</td>
+  
+ </tr>
  
  </table>
 
@@ -335,4 +400,6 @@ $mpdf->WriteHTML('<div class="pn"><b>NSF | Learner Attendance Report | 2020-11-0
 
 
 $mpdf->Output();
+
+
 ?>
