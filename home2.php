@@ -6,12 +6,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf([    'mode' => 'utf-8',
     'format' => [320, 500],'orientation' => 'L']);
 
-
-$css = file_get_contents('index1.css');
 $css = file_get_contents('home2.css');
 $mpdf->WriteHTML($css,1);
 $mpdf->SetHTMLHeader('
-
 <table width="100%" class="theader">
     <tr>
         <td><img src="img\rlms.png" class="row"></td>
@@ -24,35 +21,31 @@ $mpdf->SetHTMLHeader('
   <table width="100%">
     <tr>
       <td><img src="img\nsf.png" class="nsf1"></td>
-        <td width="20%" align="center"><img src="img\rlmsL.png"></td>
-		<td  ><img src="img\rlmsL.png" height="28"></td>
-        <td width="8%"><img src="img\mtl1.PNG"  class="mtl">
+       <td width="20%" align="center"><img src="img\rlmsL.png"></td>
+	<td><img src="img\rlmsL.png" height="28"></td>
+<td width="8%"><img src="img\mtl1.PNG"  class="mtl">
 </td>
     </tr>
 	<br/>
 </table>');
 
+$mpdf->SetHTMLFooter('
+<div style="background-image: linear-gradient(to right,#42f5d7,#42bcf5);color:white;height:30px;
+	width:100%;"></div>
+');
+
 $mpdf->WriteHTML('<br/><br/><br/><br/><br/><br/><br/><br/><div class="back"><h3>&nbsp;&nbsp;&nbsp;REPORT PERIOD - FROM: 01/10/2020, TO: 30/10/2020</h3></div>
   <br/>', \Mpdf\HTMLParserMode::HTML_BODY, true, false);
-
-//$mpdf->WriteHTML($html);
-
-  $mpdf->WriteHTML('<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	
-				 <div class="pro"> <h3>&nbsp;&nbsp;&nbsp;PROJECT DETAILS</h3></div>
-				 
+  
+  $mpdf->WriteHTML('
+ <div class="pro"> <h3>&nbsp;&nbsp;&nbsp;PROJECT DETAILS</h3></div>		 
     <table class= "tablepro">
  <tr style=" width:30%;height:30%">
  <td class="trproL"><b>Class name</b></td>
   <td class="trproR">Group 1 class</td>
  </tr>
   <tr>
-  
+ 
  <td class="trproL"><b>GPS Coordinator</b></td>
   <td  class="trproR">
 -255 23354 3542 242125 4345434 546 -898633</td>
@@ -123,10 +116,31 @@ $mpdf->WriteHTML('<br/><br/><br/><br/><br/><br/><br/><br/><div class="back"><h3>
  </table>
  <br/>
   </div>
-				 <div class="pro"> <h3>&nbsp;&nbsp;&nbsp;SUMMARY</h3></div>
+<div class="pro"> <h3>&nbsp;&nbsp;&nbsp;SUMMARY</h3></div>
   
 </body>
 </html>', \Mpdf\HTMLParserMode::HTML_BODY, false, false);
+
+$mpdf->SetHTMLHeader('
+<table width="100%" class="theader">
+    <tr>
+        <td><img src="img\rlms.png" class="row"></td>
+        <td><img src="img\rlmsL.png" height="28"></td>
+        <td width="33%" class="twidth"><img class="img" src="img\rlmsL.png" height="28"><span><b>LEARNER ATTENDENCE REPORT</b></span>
+</td>
+    </tr>
+</table>
+</div>
+  <table width="100%">
+    <tr>
+      <td><img src="img\nsf.png" class="nsf1"></td>
+       <td width="20%" align="center"><img src="img\rlmsL.png"></td>
+	<td><img src="img\rlmsL.png" height="28"></td>
+<td width="8%"><img src="img\mtl1.PNG"  class="mtl">
+</td>
+    </tr>
+	<br/>
+</table>');
 
 $mpdf->WriteHTML('<br/>
 	<div class="as"> 
@@ -141,11 +155,6 @@ $mpdf->WriteHTML('<br/><br/><br/><br/><br/><div class="back"></div>
 
 
   $mpdf->WriteHTML('
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <br/><br/><br/><br/><br/><br/><div class="back"><h3>&nbsp;&nbsp;&nbsp;REPORT PERIOD - FROM: 01/10/2020, TO: 30/10/2020</h3></div>
   <br/>
 	<table width="100%" class="tt">
@@ -323,10 +332,7 @@ $mpdf->WriteHTML('<br/><br/><br/><br/><br/><div class="back"></div>
 </body>
 </html>', \Mpdf\HTMLParserMode::HTML_BODY, false, false);
 $mpdf->WriteHTML('<div class="pn"><b>NSF | Learner Attendance Report | 2020-11-06 @ 08:26:23 | page: 1 of 1</b></div>');
-$mpdf->SetHTMLFooter('
-<div style="background-image: linear-gradient(to right,#42f5d7,#42bcf5);color:white;height:30px;
-	width:100%;"></div>
-');
+
 
 $mpdf->Output();
 ?>
