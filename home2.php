@@ -31,6 +31,7 @@ $mpdf->SetHTMLHeader('
     </tr>
 	<br/>
 </table>');
+
 $mpdf->WriteHTML('<br/><br/><br/><br/><br/><br/><br/><br/><div class="back"><h3>&nbsp;&nbsp;&nbsp;REPORT PERIOD - FROM: 01/10/2020, TO: 30/10/2020</h3></div>
   <br/>', \Mpdf\HTMLParserMode::HTML_BODY, true, false);
 
@@ -135,7 +136,7 @@ $mpdf->WriteHTML('<br/>
 $mpdf->WriteHTML('<div class="pn"><b>NSF | Learner Attendance Report | 2020-11-06 @ 08:26:23 | page: 1 of 1</b></div>');
 
 
-$mpdf->WriteHTML('<br/><br/><br/><br/><br/><br/><br/><br/><div class="back"></div>
+$mpdf->WriteHTML('<br/><br/><br/><br/><br/><div class="back"></div>
   <br/>', \Mpdf\HTMLParserMode::HTML_BODY, true, false);
 
 
@@ -145,7 +146,7 @@ $mpdf->WriteHTML('<br/><br/><br/><br/><br/><br/><br/><br/><div class="back"></di
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<br/><br/><br/><br/><br/><br/><br/><br/><div class="back"><h3>&nbsp;&nbsp;&nbsp;REPORT PERIOD - FROM: 01/10/2020, TO: 30/10/2020</h3></div>
+<br/><br/><br/><br/><br/><br/><div class="back"><h3>&nbsp;&nbsp;&nbsp;REPORT PERIOD - FROM: 01/10/2020, TO: 30/10/2020</h3></div>
   <br/>
 	<table width="100%" class="tt">
  <tr class="trt">
@@ -312,8 +313,12 @@ $mpdf->WriteHTML('<br/><br/><br/><br/><br/><br/><br/><br/><div class="back"></di
     <td class="td1">1</td>
   
  </tr>
-
+  
+  
+ 
  </table>
+
+
 
 </body>
 </html>', \Mpdf\HTMLParserMode::HTML_BODY, false, false);
